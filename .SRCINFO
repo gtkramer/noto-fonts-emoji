@@ -1,5 +1,5 @@
 pkgbase = noto-fonts-emoji
-	pkgdesc = Google Noto emoji fonts
+	pkgdesc = Google Noto Color Emoji font
 	pkgver = 2.047
 	pkgrel = 1
 	epoch = 1
