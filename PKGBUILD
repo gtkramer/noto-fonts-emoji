@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=noto-fonts-emoji
-pkgver=2.047
+pkgver=2.048
 pkgrel=1
 epoch=1
 pkgdesc='Google Noto Color Emoji font'
@@ -11,7 +11,7 @@ license=(custom:OFL)
 provides=(emoji-font)
 makedepends=(git)
 source=(git+https://github.com/googlefonts/noto-emoji.git#tag=v$pkgver)
-sha256sums=('49fc0a658a6acdb95977286f366f87d8061e15e36c571beb699ded852a04a0b1')
+sha256sums=('7e6a3d53865c42f619d578362c9e50068beb61230204682b964fb21549867807')
 
 package() {
   cd noto-emoji
