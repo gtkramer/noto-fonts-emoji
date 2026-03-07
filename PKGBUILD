@@ -1,21 +1,24 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
-pkgname=noto-fonts-emoji
+pkgbase=noto-fonts-emoji
+pkgname=(ttf-noto-fonts-emoji)
 pkgver=2.051
-pkgrel=1
+pkgrel=2
 epoch=1
-pkgdesc='Google Noto Color Emoji font'
+pkgdesc='Google Noto Emoji font'
 arch=(any)
-url='https://www.google.com/get/noto/'
-license=(OFL-1.1-no-RFN)
+url='https://fonts.google.com/noto'
+license=(OFL-1.1)
 provides=(emoji-font)
-makedepends=(git)
-source=(git+https://github.com/googlefonts/noto-emoji.git#tag=v$pkgver)
-sha256sums=('6c2bd2074fdd9ac239a891ab1917b6fedd53c2e80ffdc9f0cd4d98625ef6b249')
+source=("https://github.com/googlefonts/noto-emoji/archive/refs/tags/v${pkgver}.zip")
+b2sums=('52e27896626703b2bff43dcf85aab91e8e9ab71dd1bc940abe19bbebc0f026fae610681221200abeffd55351ea4cc019295815435f224577bf784d074efadc8c')
 
-package() {
-  cd noto-emoji
-  mkdir -p "$pkgdir"/usr/share/fonts/noto
-  install -m644 fonts/NotoColorEmoji.ttf "$pkgdir"/usr/share/fonts/noto
-  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+package_ttf-noto-fonts-emoji() {
+  provides+=(noto-fonts-emoji)
+  conflicts=(noto-fonts-emoji)
+  replaces=(noto-fonts-emoji)
+
+  cd "${srcdir}/noto-emoji-${pkgver}/fonts"
+  install -Dm644 NotoColorEmoji.ttf "${pkgdir}/usr/share/fonts/${pkgbase//-fonts/}"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}"
 }

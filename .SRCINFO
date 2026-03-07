@@ -1,14 +1,17 @@
 pkgbase = noto-fonts-emoji
-	pkgdesc = Google Noto Color Emoji font
+	pkgdesc = Google Noto Emoji font
 	pkgver = 2.051
-	pkgrel = 1
+	pkgrel = 2
 	epoch = 1
-	url = https://www.google.com/get/noto/
+	url = https://fonts.google.com/noto
 	arch = any
-	license = OFL-1.1-no-RFN
-	makedepends = git
+	license = OFL-1.1
 	provides = emoji-font
-	source = git+https://github.com/googlefonts/noto-emoji.git#tag=v2.051
-	sha256sums = 6c2bd2074fdd9ac239a891ab1917b6fedd53c2e80ffdc9f0cd4d98625ef6b249
+	source = https://github.com/googlefonts/noto-emoji/archive/refs/tags/v2.051.zip
+	b2sums = 52e27896626703b2bff43dcf85aab91e8e9ab71dd1bc940abe19bbebc0f026fae610681221200abeffd55351ea4cc019295815435f224577bf784d074efadc8c
 
-pkgname = noto-fonts-emoji
+pkgname = ttf-noto-fonts-emoji
+	provides = emoji-font
+	provides = noto-fonts-emoji
+	conflicts = noto-fonts-emoji
+	replaces = noto-fonts-emoji
